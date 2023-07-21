@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: example-deployment
+  labels:
+    app: example
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: example
+  template:
+    metadata:
+      labels:
+        app: example
+    spec:
+      # Main application container, which serves as an echo server. This is the primary service.
+      containers:
+        - name: echoserver
+          image: k8s.gcr.io/echoserver:1.4
+          ports:
+            - containerPort: 8080
+
+        # Sidecar container running Nginx. This could be used to handle tasks like logging, monitoring, etc.,
+        # that aren't the primary responsibility of the main application container.
+        - name: nginx-sidecar
+          image: nginx:alpine-slim
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name: nginx-config-volume
+              mountPath: /etc/nginx/conf.d
+
+      # Volumes used in the deployment. In this case, a ConfigMap is used to provide Nginx configuration.
+      volumes:
+        - name: nginx-config-volume
+          configMap:
+            name: nginx-config
