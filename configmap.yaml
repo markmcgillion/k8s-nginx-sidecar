@@ -18,6 +18,8 @@ data:
         add_header X-Content-Type-Options nosniff;
         add_header X-XSS-Protection "1; mode=block";
         add_header Content-Security-Policy "default-src 'self'";
-        more_set_headers 'Server: MuchBetter';
+        add_header Referrer-Policy 'no-referrer';
+        add_header Feature-Policy "geolocation 'self'; microphone 'none'";
+        add_header Expect-CT "enforce, max-age=86400";
       }
     }
