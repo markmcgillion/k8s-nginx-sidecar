@@ -1,4 +1,4 @@
-# Nginx Sidecar Example 🚀
+# Nginx Sidecar Example
 
 This repository serves as a guide to configure and use an Nginx sidecar to add security response headers in a Kubernetes environment. 🛡️
 
