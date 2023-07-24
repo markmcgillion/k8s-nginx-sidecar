@@ -1,8 +1,8 @@
 # Nginx Sidecar Example
 
-This repository serves as a guide to configure and use an Nginx sidecar to add security response headers in a Kubernetes environment. 🛡️
+This repository serves as a guide to configure and use an Nginx sidecar to add security response headers in a Kubernetes environment.
 
-## Overview 📚
+## Overview
 
 In this repository, you will find the following Kubernetes configuration files:
 
@@ -12,7 +12,7 @@ In this repository, you will find the following Kubernetes configuration files:
 
 Using these files, you can deploy a secure, robust, and scalable application complete with an Nginx sidecar for added security.
 
-## Prerequisites ☑️
+## Prerequisites
 
 Before you begin, ensure you have the following installed:
 
@@ -20,7 +20,7 @@ Before you begin, ensure you have the following installed:
 - Kubernetes (Minikube, kubectl)
 - A text editor (VS Code, Atom, etc.)
 
-## Deployment Steps 🚀
+## Deployment Steps
 
 1. **Clone the Repository** 
    
